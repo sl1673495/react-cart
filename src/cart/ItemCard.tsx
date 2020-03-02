@@ -8,7 +8,15 @@ interface Props {
   onCheckedChange: any
 }
 
-export default function ItemCard(props: Props) {
+// memo优化策略
+function areEqual(prevProps: Props, nextProps: Props) {
+  return (
+    prevProps.checked === nextProps.checked
+  )
+}
+
+const ItemCard = React.memo((props: Props) => {
+  console.log('cart item rerender')
   const { item, checked, onCheckedChange } = props
   const { name, price } = item
 
@@ -30,4 +38,7 @@ export default function ItemCard(props: Props) {
       </p>
     </div>
   )
-}
+}, areEqual)
+
+
+export default ItemCard
