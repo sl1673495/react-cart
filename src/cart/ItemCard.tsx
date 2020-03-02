@@ -1,11 +1,12 @@
 import React from "react"
 import { CartItem } from "./"
+import { OnCheckedChange } from './use-checked'
 import { Typography } from "antd"
 
 interface Props {
   item: CartItem
   checked: boolean
-  onCheckedChange: any
+  onCheckedChange: OnCheckedChange<CartItem>
 }
 
 // memo优化策略
@@ -24,6 +25,7 @@ const ItemCard = React.memo((props: Props) => {
     const { checked } = e.target
     onCheckedChange(item, checked)
   }
+  
   return (
     <div className="item-card">
       <div className="checkbox-wrap">
