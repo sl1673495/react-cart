@@ -18,6 +18,9 @@
 
 ![gif1](https://user-gold-cdn.xitu.io/2020/3/1/17091fd2e053b14c?w=630&h=904&f=gif&s=1082912)
 
+## 预览地址
+https://sl1673495.github.io/react-cart
+
 ## 需求实现
 
 ### 获取数据
