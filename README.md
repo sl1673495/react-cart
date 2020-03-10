@@ -11,15 +11,20 @@
 
 ✨如何抽象出简单好用的`自定义hook`
 
+## 预览地址
+https://sl1673495.github.io/react-cart
+
+## 代码仓库
+本文涉及到的代码已经整理到github仓库中，用cra搭建了一个示例工程，关于性能优化的部分可以打开控制台查看重渲染的情况。  
+
+https://github.com/sl1673495/react-cart
+
 ## 需求分解
 作为一个购物车需求，那么它必然涉及到几个需求点：
 1. 勾选、全选与反选。
 2. 根据选中项计算总价。
 
-![gif1](https://user-gold-cdn.xitu.io/2020/3/1/17091fd2e053b14c?w=630&h=904&f=gif&s=1082912)
-
-## 预览地址
-https://sl1673495.github.io/react-cart
+![gif1](https://user-gold-cdn.xitu.io/2020/3/3/1709e44da6578aa9?w=794&h=1036&f=gif&s=63288)
 
 ## 需求实现
 
@@ -143,9 +148,9 @@ const onCheckedAllChange = newCheckedAll => {
 
 我们来看一下动图演示：
 
-![gif3](https://user-gold-cdn.xitu.io/2020/3/1/17092036bd4a7c87?w=2076&h=1224&f=gif&s=2606238)
+![gif2](https://user-gold-cdn.xitu.io/2020/3/3/1709e458494cf448?w=1644&h=1048&f=gif&s=138141)
 
-购物车此时有3个商品，看控制台的打印，每次都是以3为倍数增长每点击一次checkbox，都会触发所有子组件的重新渲染。
+购物车此时有5个商品，看控制台的打印，每次都是以5为倍数增长每点击一次checkbox，都会触发所有子组件的重新渲染。
 
 如果我们有50个商品在购物车中，我们改了其中某一项的`checked`状态，也会导致50个子组件重新渲染。  
 
@@ -181,8 +186,7 @@ const ItemCard: FC<Props> = React.memo(props => {
 
 我们来看一下bug还原：
 
-
-![gif2](https://user-gold-cdn.xitu.io/2020/3/1/170920028dfefc32?w=630&h=904&f=gif&s=1198210)
+![gif3](https://user-gold-cdn.xitu.io/2020/3/3/1709e454fc3b64d9?w=790&h=1034&f=gif&s=49176)
 
 如果我们先点击了第一个商品的勾选，再点击第二个商品的勾选，你会发现第一个商品的勾选状态没了。  
 
