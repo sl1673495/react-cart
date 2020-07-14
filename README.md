@@ -12,7 +12,11 @@
 ✨如何抽象出简单好用的`自定义hook`
 
 ## 预览地址
+### Github Pages
 https://sl1673495.github.io/react-cart
+
+### Vercel（国内更快）
+https://react-cart-beta.vercel.app
 
 ## 代码仓库
 本文涉及到的代码已经整理到github仓库中，用cra搭建了一个示例工程，关于性能优化的部分可以打开控制台查看重渲染的情况。  
