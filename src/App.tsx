@@ -1,7 +1,7 @@
 import React from 'react';
 import Cart from './cart'
 import './App.css';
-import 'antd/dist/antd.css';
+import 'antd/dist/reset.css';
 
 function App() {
   return (
